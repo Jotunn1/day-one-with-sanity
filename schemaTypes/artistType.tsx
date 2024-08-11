@@ -10,25 +10,24 @@ export const artistType = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'url',
-      title: 'URL',
-      description: (
-        <details>
-          <summary>Why is this important?</summary>
-          The Googlebot is an indexer of...
-        </details>
-      ),
-      type: 'url',
+      name: 'description',
+      type: 'text',
+    }),
+    defineField({
+      name: 'photo',
+      type: 'image',
     }),
   ],
   preview: {
     select: {
       title: 'name',
+      subtitle: 'description',
+      media: 'photo',
     },
-    prepare: ({title}) => ({
+    prepare: ({title, subtitle, media}) => ({
       title,
-      subtitle: 'Artist',
-      media: <span>🎨</span>,
+      subtitle,
+      media,
     }),
   },
 })
