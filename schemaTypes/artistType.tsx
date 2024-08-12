@@ -12,6 +12,7 @@ export const artistType = defineType({
     defineField({
       name: 'description',
       type: 'text',
+      title: 'Artist description',
     }),
     defineField({
       name: 'photo',
